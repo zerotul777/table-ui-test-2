@@ -1,0 +1,56 @@
+.custom-input {
+	width: 360px;
+	position: relative;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+
+	&__label {
+		font-size: 16px;
+		line-height: 18px;
+		color: $color-midnight-express;
+	}
+
+	&__field {
+		width: 100%;
+		font-family: $ff-main;
+		padding: 13px 13px 12px 25px;
+		border: 1px solid $color-gainsboro;
+		border-radius: 5px;
+		background-color: $color-white-smoke;
+		font-size: 18px;
+		line-height: 18px;
+		color: $color-midnight-express;
+		outline: none;
+		transition: box-shadow $transition-100;
+
+		&::placeholder {
+			color: $color-dark-gray;
+			opacity: 1;
+		}
+
+		&:hover,
+		&:focus-visible {
+			box-shadow: 1px 3px 5px $color-dark-gray;
+		}
+	}
+
+	&--alt {
+		width: 80px;
+		border: 1px solid $color-white-smoke;
+
+		.custom-input__field {
+			font-family: $ff-montserrat;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 17px;
+			text-align: center;
+			border: none;
+			padding: 6px;
+			color: $color-black;
+			background-color: $color-white;
+			outline: none;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+/* Global */
+/* ------------------------------------ */
+@import "global/_normalize.scss";
+@import "global/_variables";
+@import "global/_fonts";
+@import "global/_reboot";
+@import "global/_visually-hidden";
+
+
+/* Blocks */
+/* ------------------------------------ */
+@import "blocks/_header";
+@import "blocks/_main";
+@import "blocks/_locations";
+@import "blocks/_location-cell";
+@import "blocks/_breadcrumbs";
+@import "blocks/_options";
+@import "blocks/_btn";
+@import "blocks/_custom-checkbox";
+@import "blocks/_custom-input";
+@import "blocks/_custom-search";
+@import "blocks/_custom-select";
+@import "blocks/_modal";
+@import "blocks/_settings";
+@import "blocks/_custom-table";
+@import "blocks/_footer";
+

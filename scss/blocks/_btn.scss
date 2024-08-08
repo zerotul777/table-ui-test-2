@@ -1,0 +1,82 @@
+.btn {
+	max-width: 286px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $color-midnight-express;
+	border: 1px solid $color-midnight-express;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 16px;
+	font-family: $ff-main;
+	font-size: 14px;
+	line-height: 16px;
+	text-transform: uppercase;
+	letter-spacing: 0.13em;
+	color: $color-white;
+	outline: none;
+	gap: 10px;
+	transition: background-color $transition-100;
+
+	&:hover,
+	&:focus-visible {
+			background-color: $color-midnight-express-08;
+		}
+
+	&__icon {
+		width: 13px;
+	}
+
+	&--alt {
+		max-width: 336px;
+		padding: 14px;
+		line-height: 18px;
+		letter-spacing: 0.1em;
+
+		.btn__icon {
+			width: 20px;
+		}
+	}
+
+	&--bg-white {
+		background-color: $color-white;
+		border: 1px solid $color-midnight-express;
+		color: $color-midnight-express;
+		padding: 16px 30px;
+
+		&:hover,
+		&:focus-visible {
+				background-color: $color-midnight-express-01;
+			}
+	}
+
+	&--size-xs {
+		min-width: 130px;
+		min-height: 37px;
+		padding: 9px 31px;
+		background-color: $color-white;
+		border: none;
+		color: $color-midnight-express;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 18px;
+		text-transform: none;
+		letter-spacing: normal;
+
+		&:hover,
+		&:focus-visible {
+				background-color: $color-midnight-express-01;
+			}
+
+		.options__item--active & {
+			background-color: $color-midnight-express;
+			color: $color-white;
+
+			&:hover,
+			&:focus-visible {
+					background-color: $color-midnight-express-08;
+				}
+		}
+	}
+}

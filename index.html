@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>Тестовое задание</title>
+</head>
+
+<body>
+  <header class="header">
+    <a class="header__logo" href="#">
+      <svg class="header__logo-icon" width="19" height="34" aria-hidden="true">
+        <use xlink:href="images/sprite.svg#icon-logo"></use>
+      </svg>
+      <span class="header__logo-label">v 2.01</span>
+    </a>
+    <button class="header__exit" type="button" aria-label="Выйти">
+      <svg class="header__exit-icon" width="16" height="14" aria-hidden="true">
+        <use xlink:href="images/sprite.svg#icon-exit"></use>
+      </svg>
+    </button>
+  </header>
+  <main class="main">
+    <h1 class="visually-hidden">Главная страница</h1>
+    <nav class="main__nav main__nav--open">
+      <ul class="main__nav-list">
+        <li class="main__nav-item">
+          <button class="main__nav-btn" type="button">
+            <svg class="main__nav-icon" width="15" height="14" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#icon-squares"></use>
+            </svg>
+            Имущество
+          </button>
+        </li>
+        <li class="main__nav-item">
+          <button class="main__nav-btn" type="button">
+            <svg class="main__nav-icon" width="15" height="18" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#icon-list"></use>
+            </svg>
+            Инвентаризация
+          </button>
+        </li>
+        <li class="main__nav-item">
+          <button class="main__nav-btn" type="button">
+            <svg class="main__nav-icon" width="15" height="14" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#icon-contacts"></use>
+            </svg>
+            Сотрудники
+          </button>
+        </li>
+        <li class="main__nav-item">
+          <button class="main__nav-btn" type="button">
+            <svg class="main__nav-icon" width="15" height="16" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#icon-alert"></use>
+            </svg>
+            Уведомления
+          </button>
+        </li>
+        <li class="main__nav-item main__nav-item--active">
+          <button class="main__nav-btn" type="button" data-target="locations">
+            <svg class="main__nav-icon" width="15" height="18" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#icon-locations"></use>
+            </svg>
+            Локации
+          </button>
+        </li>
+        <li class="main__nav-item">
+          <button class="main__nav-btn" type="button" data-target="settings">
+            <svg class="main__nav-icon" width="15" height="14" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#icon-settings"></use>
+            </svg>
+            Настройки
+          </button>
+        </li>
+      </ul>
+      <button class="main__nav-hide" type="button">
+        <svg class="main__nav-hide-icon" width="8" height="11" aria-hidden="true">
+          <use xlink:href="images/sprite.svg#icon-arrow-left"></use>
+        </svg>
+        Скрыть меню
+      </button>
+    </nav>
+    <ul class="main__section">
+      <li class="main__section-item main__section-item--active" id="locations">
+        <section class="locations">
+          <h2 class="visually-hidden">Локации</h2>
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs__item">Локации</li>
+            <li class="breadcrumbs__item">Все локации</li>
+          </ul>
+          <div class="locations__top">
+            <nav class="options">
+              <ul class="options__list">
+                <li class="options__item options__item--active">
+                  <button class="btn btn--size-xs" type="button">Все локации</button>
+                </li>
+                <li class="options__item">
+                  <button class="btn btn--size-xs" type="button">Импорт/Экспорт</button>
+                </li>
+                <li class="options__item">
+                  <button class="btn btn--size-xs" type="button">Настройки</button>
+                </li>
+              </ul>
+            </nav>
+            <button class="btn btn--alt" type="button">
+              <svg class="btn__icon" width="21" height="20" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-update"></use>
+              </svg>
+              <span class="btn__text">синхронизация</span>
+              <span class="locations__time">(17.05.2024 15:23:21)</span>
+            </button>
+          </div>
+          <div class="locations__inner">
+            <button class="btn" id="create-location-btn" type="button">
+              <svg class="btn__icon" width="13" height="14" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-plus"></use>
+              </svg>
+              <span class="btn__text">Создать локацию</span>
+            </button>
+            <div class="locations__search">
+              <div class="custom-checkbox">
+                <input class="custom-checkbox__field visually-hidden" type="checkbox" id="exact-search"
+                  name="exact-search" checked>
+                <label class="custom-checkbox__label" for="exact-search">
+                  <span class="custom-checkbox__inner">
+                    <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-check"></use>
+                    </svg>
+                  </span>
+                  <span class="custom-checkbox__text">Поиск по точному вхождению</span>
+                </label>
+              </div>
+              <div class="custom-search">
+                <input class="custom-search__field" type="search" name="search-field" placeholder="Поиск"
+                  aria-label="Поиск">
+                <svg class="custom-search__icon" width="14" height="14" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-search"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <ul class="locations__list">
+            <li class="locations__item">
+              <button class="locations__btn" type="button" aria-label="Открыть пунтк меню">
+                <span class="locations__btn-line"></span>
+                <span class="locations__btn-line locations__btn-line--vertical"></span>
+              </button>
+              <div class="location-cell">
+                <svg class="location-cell__icon" width="4" height="16" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-dots"></use>
+                </svg>
+                <div class="location-cell__inner">
+                  <span class="location-cell__name">Локация 1</span>
+                  <span class="location-cell__info location-cell__count">512</span>
+                  <div class="location-cell__modify">
+                    <button class="location-cell__modify-edit" type="button">
+                      <svg class="location-cell__modify-edit-icon" width="12" height="12" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-edit"></use>
+                      </svg>
+                      Редактировать
+                    </button>
+                    <button class="location-cell__modify-delete" type="button">
+                      <svg class="location-cell__modify-delete-icon" width="10" height="10" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-cross"></use>
+                      </svg>
+                      Удалить
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ul class="locations__list locations__list--secondary">
+                <li class="locations__item">
+                  <button class="locations__btn" type="button" aria-label="Открыть пунтк меню">
+                    <span class="locations__btn-line"></span>
+                    <span class="locations__btn-line locations__btn-line--vertical"></span>
+                  </button>
+                  <div class="location-cell">
+                    <svg class="location-cell__icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                    <div class="location-cell__inner">
+                      <span class="location-cell__name">Подотдел 1</span>
+                      <span class="location-cell__info location-cell__count">10</span>
+                      <span class="location-cell__info">Для утерь</span>
+                      <div class="location-cell__modify">
+                        <button class="location-cell__modify-edit" type="button">
+                          <svg class="location-cell__modify-edit-icon" width="12" height="12" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#icon-edit"></use>
+                          </svg>
+                          Редактировать
+                        </button>
+                        <button class="location-cell__modify-delete" type="button">
+                          <svg class="location-cell__modify-delete-icon" width="10" height="10" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#icon-cross"></use>
+                          </svg>
+                          Удалить
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="locations__item">
+                  <button class="locations__btn" type="button" aria-label="Открыть пунтк меню">
+                    <span class="locations__btn-line"></span>
+                    <span class="locations__btn-line locations__btn-line--vertical"></span>
+                  </button>
+                  <div class="location-cell">
+                    <svg class="location-cell__icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                    <div class="location-cell__inner">
+                      <span class="location-cell__name">Подотдел 2</span>
+                      <span class="location-cell__info location-cell__count">100</span>
+                      <div class="location-cell__modify">
+                        <button class="location-cell__modify-edit" type="button">
+                          <svg class="location-cell__modify-edit-icon" width="12" height="12" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#icon-edit"></use>
+                          </svg>
+                          Редактировать
+                        </button>
+                        <button class="location-cell__modify-delete" type="button">
+                          <svg class="location-cell__modify-delete-icon" width="10" height="10" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#icon-cross"></use>
+                          </svg>
+                          Удалить
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="locations__list locations__list--third">
+                    <li class="locations__item">
+                      <div class="location-cell">
+                        <svg class="location-cell__icon" width="4" height="16" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-dots"></use>
+                        </svg>
+                        <div class="location-cell__inner">
+                          <span class="location-cell__name">Подподотдел 1</span>
+                          <span class="location-cell__info location-cell__count">2</span>
+                          <span class="location-cell__info">Виртуальная</span>
+                          <span class="location-cell__info location-cell__barcode">Без штрихкода</span>
+                          <div class="location-cell__modify">
+                            <button class="location-cell__modify-edit" type="button">
+                              <svg class="location-cell__modify-edit-icon" width="12" height="12" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#icon-edit"></use>
+                              </svg>
+                              Редактировать
+                            </button>
+                            <button class="location-cell__modify-delete" type="button">
+                              <svg class="location-cell__modify-delete-icon" width="10" height="10" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#icon-cross"></use>
+                              </svg>
+                              Удалить
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="locations__item">
+                  <button class="locations__btn" type="button" aria-label="Открыть пунтк меню">
+                    <span class="locations__btn-line"></span>
+                    <span class="locations__btn-line locations__btn-line--vertical"></span>
+                  </button>
+                  <div class="location-cell">
+                    <svg class="location-cell__icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                    <div class="location-cell__inner">
+                      <span class="location-cell__name">Подотдел 3</span>
+                      <span class="location-cell__info location-cell__count">400</span>
+                      <div class="location-cell__modify">
+                        <button class="location-cell__modify-edit" type="button">
+                          <svg class="location-cell__modify-edit-icon" width="12" height="12" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#icon-edit"></use>
+                          </svg>
+                          Редактировать
+                        </button>
+                        <button class="location-cell__modify-delete" type="button">
+                          <svg class="location-cell__modify-delete-icon" width="10" height="10" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#icon-cross"></use>
+                          </svg>
+                          Удалить
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="locations__item">
+              <button class="locations__btn" type="button" aria-label="Открыть пунтк меню">
+                <span class="locations__btn-line"></span>
+                <span class="locations__btn-line locations__btn-line--vertical"></span>
+              </button>
+              <div class="location-cell">
+                <svg class="location-cell__icon" width="4" height="16" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-dots"></use>
+                </svg>
+                <div class="location-cell__inner">
+                  <span class="location-cell__name">Локация 2</span>
+                  <span class="location-cell__info location-cell__count">100</span>
+                  <div class="location-cell__modify">
+                    <button class="location-cell__modify-edit" type="button">
+                      <svg class="location-cell__modify-edit-icon" width="12" height="12" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-edit"></use>
+                      </svg>
+                      Редактировать
+                    </button>
+                    <button class="location-cell__modify-delete" type="button">
+                      <svg class="location-cell__modify-delete-icon" width="10" height="10" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-cross"></use>
+                      </svg>
+                      Удалить
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="locations__item">
+              <button class="locations__btn" type="button" aria-label="Открыть пунтк меню">
+                <span class="locations__btn-line"></span>
+                <span class="locations__btn-line locations__btn-line--vertical"></span>
+              </button>
+              <div class="location-cell">
+                <svg class="location-cell__icon" width="4" height="16" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-dots"></use>
+                </svg>
+                <div class="location-cell__inner">
+                  <span class="location-cell__name">Локация 3</span>
+                  <span class="location-cell__info location-cell__count">100</span>
+                  <div class="location-cell__modify">
+                    <button class="location-cell__modify-edit" type="button">
+                      <svg class="location-cell__modify-edit-icon" width="12" height="12" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-edit"></use>
+                      </svg>
+                      Редактировать
+                    </button>
+                    <button class="location-cell__modify-delete" type="button">
+                      <svg class="location-cell__modify-delete-icon" width="10" height="10" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-cross"></use>
+                      </svg>
+                      Удалить
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="modal" id="create-location-modal">
+            <div class="modal__wrapper">
+              <form class="modal__form" action="#" method="POST">
+                <span class="modal__title">Создать локацию</span>
+                <div class="custom-input">
+                  <input class="custom-input__field" type="text" name="location-name" id="location-name"
+                    placeholder="Название">
+                </div>
+                <div class="custom-input">
+                  <input class="custom-input__field" type="text" name="location-barcode" id="location-barcode"
+                    placeholder="Штрихкод">
+                </div>
+                <div class="custom-input">
+                  <input class="custom-input__field" type="text" name="location-rfid" id="location-rfid"
+                    placeholder="RFID">
+                </div>
+                <select class="custom-select" name="select">
+                  <option disabled>Вложенность</option>
+                  <option value="loc1">Локация 1</option>
+                  <option value="loc3">Локация 2</option>
+                  <option value="loc2">Локация 3</option>
+                </select>
+                <div class="modal__checkboxes">
+                  <div class="custom-checkbox custom-checkbox--alt">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="virtual-location"
+                      name="virtual-location" checked>
+                    <label class="custom-checkbox__label" for="virtual-location">
+                      <span class="custom-checkbox__text">Виртуальная локация</span>
+                    </label>
+                  </div>
+                  <div class="custom-checkbox custom-checkbox--alt">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="loss-location"
+                      name="loss-location">
+                    <label class="custom-checkbox__label" for="loss-location">
+                      <span class="custom-checkbox__text">Локация для утерь</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="modal__btns">
+                  <button class="modal__create-btn btn" type="submit">
+                    <svg class="btn__icon" width="15" height="14" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-save"></use>
+                    </svg>
+                    Создать
+                  </button>
+                  <button class="modal__close-btn btn btn--bg-white" type="button">Отменить</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal" id="edit-location-modal">
+            <div class="modal__wrapper">
+              <form class="modal__form" action="#" method="POST">
+                <span class="modal__title">Изменить локацию <span class="modal__title-name">%название%</span></span>
+                <div class="custom-input">
+                  <label class="custom-input__label" for="edit-location-name">Название</label>
+                  <input class="custom-input__field" type="text" name="edit-location-name" id="edit-location-name"
+                    placeholder="Название" value="Локация 11">
+                </div>
+                <div class="custom-input">
+                  <label class="custom-input__label" for="edit-location-barcode">Штрихкод</label>
+                  <input class="custom-input__field" type="text" name="edit-location-barcode" id="edit-location-barcode"
+                    placeholder="Штрихкод" value="1123123123123">
+                </div>
+                <div class="custom-input">
+                  <label class="custom-input__label" for="edit-location-rfid">RFID</label>
+                  <input class="custom-input__field" type="text" name="edit-location-rfid" id="edit-location-rfid"
+                    placeholder="RFID" value="1123123123123">
+                </div>
+                <div class="modal__inner">
+                  <div class="modal__inner-label">Вложенность</div>
+                  <select class="custom-select" name="select">
+                    <option disabled>Вложенность</option>
+                    <option value="loc1">Локация 1</option>
+                    <option value="loc3">Локация 2</option>
+                    <option value="loc2">Локация 3</option>
+                  </select>
+                </div>
+                <div class="modal__checkboxes">
+                  <div class="custom-checkbox custom-checkbox--alt">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="edit-virtual-location"
+                      name="edit-virtual-location" checked>
+                    <label class="custom-checkbox__label" for="edit-virtual-location">
+                      <span class="custom-checkbox__text">Виртуальная локация</span>
+                    </label>
+                  </div>
+                  <div class="custom-checkbox custom-checkbox--alt">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="edit-loss-location"
+                      name="edit-loss-location">
+                    <label class="custom-checkbox__label" for="edit-loss-location">
+                      <span class="custom-checkbox__text">Локация для утерь</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="modal__btns modal__btns--xl">
+                  <button class="modal__delete-btn btn btn--bg-white" type="reset">
+                    <svg class="btn__icon" width="10" height="10" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-cross"></use>
+                    </svg>
+                    Удалить
+                  </button>
+                  <button class="modal__close-btn btn btn--bg-white" type="button">Отменить</button>
+                  <button class="modal__create-btn btn" type="submit">
+                    <svg class="btn__icon" width="15" height="14" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-save"></use>
+                    </svg>
+                    Сохранить
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </li>
+      <li class="main__section-item" id="settings">
+        <section class="settings">
+          <h2 class="visually-hidden">Настройки</h2>
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs__item">Настройки</li>
+            <li class="breadcrumbs__item">Локации</li>
+          </ul>
+          <div class="settings__top">
+            <nav class="options">
+              <ul class="options__list">
+                <li class="options__item">
+                  <button class="btn btn--size-xs" type="button">Имущество</button>
+                </li>
+                <li class="options__item">
+                  <button class="btn btn--size-xs" type="button">Инвентаризация</button>
+                </li>
+                <li class="options__item">
+                  <button class="btn btn--size-xs" type="button">Сотрудники</button>
+                </li>
+                <li class="options__item options__item--active">
+                  <button class="btn btn--size-xs" type="button">Локации</button>
+                </li>
+                <li class="options__item">
+                  <button class="btn btn--size-xs" type="button">Уведомления</button>
+                </li>
+                <li class="options__item">
+                  <button class="btn btn--size-xs" type="button">Справочники</button>
+                </li>
+                <li class="options__item">
+                  <button class="btn btn--size-xs" type="button">Пользователь</button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="settings__content">
+            <h3 class="settings__content-title">Настройка полей таблицы</h3>
+            <table class="custom-table">
+              <tr class="custom-table__row">
+                <th class="custom-table__head"></th>
+                <th class="custom-table__head">Описание</th>
+                <th class="custom-table__head">Сортировка</th>
+                <th class="custom-table__head">ID</th>
+                <th class="custom-table__head">Тип поля</th>
+                <th class="custom-table__head">Выводить в таблицу</th>
+                <th class="custom-table__head">Обязательно</th>
+                <th class="custom-table__head">Удалить</th>
+              </tr>
+              <tr class="custom-table__row">
+                <td class="custom-table__data">
+                  <button class="custom-table__dots" type="button">
+                    <svg class="custom-table__dots-icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                  </button>
+                  Название
+                  <button class="custom-table__edit" type="button">
+                    <svg class="custom-table__edit-icon" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-edit"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                  <button class="custom-table__about" type="button">
+                    <svg class="custom-table__about-icon" width="22" height="22" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-question"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-input custom-input--alt">
+                    <input class="custom-input__field" type="text" name="sort-name" id="sort-name" value="500">
+                  </div>
+                </td>
+                <td class="custom-table__data">1001</td>
+                <td class="custom-table__data">Строка</td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="name-tabulate"
+                      name="name-tabulate" checked>
+                    <label class="custom-checkbox__label" for="name-tabulate">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="name-required"
+                      name="name-required" checked>
+                    <label class="custom-checkbox__label" for="name-required">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data"></td>
+              </tr>
+              <tr class="custom-table__row">
+                <td class="custom-table__data">
+                  <button class="custom-table__dots" type="button">
+                    <svg class="custom-table__dots-icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                  </button>
+                  Цена
+                  <button class="custom-table__edit" type="button">
+                    <svg class="custom-table__edit-icon" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-edit"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-input custom-input--alt">
+                    <input class="custom-input__field" type="text" name="sort-price" id="sort-price" value="510">
+                  </div>
+                </td>
+                <td class="custom-table__data">1002</td>
+                <td class="custom-table__data">Число</td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="price-tabulate"
+                      name="price-tabulate" checked>
+                    <label class="custom-checkbox__label" for="price-tabulate">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="price-required"
+                      name="price-required" checked>
+                    <label class="custom-checkbox__label" for="price-required">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="price-delete"
+                      name="price-delete" checked>
+                    <label class="custom-checkbox__label" for="price-delete">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr class="custom-table__row">
+                <td class="custom-table__data">
+                  <button class="custom-table__dots" type="button">
+                    <svg class="custom-table__dots-icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                  </button>
+                  МОЛ
+                  <button class="custom-table__edit" type="button">
+                    <svg class="custom-table__edit-icon" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-edit"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-input custom-input--alt">
+                    <input class="custom-input__field" type="text" name="sort-mol" id="sort-mol" value="520">
+                  </div>
+                </td>
+                <td class="custom-table__data">1003</td>
+                <td class="custom-table__data">Справочник
+                  <button class="custom-table__guide" type="button">
+                    <svg class="custom-table__guide-icon" width="20" height="22" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-guide"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="mol-tabulate"
+                      name="mol-tabulate" checked>
+                    <label class="custom-checkbox__label" for="mol-tabulate">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="mol-required"
+                      name="mol-required" checked>
+                    <label class="custom-checkbox__label" for="mol-required">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="mol-delete"
+                      name="mol-delete">
+                    <label class="custom-checkbox__label" for="mol-delete">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr class="custom-table__row">
+                <td class="custom-table__data">
+                  <button class="custom-table__dots" type="button">
+                    <svg class="custom-table__dots-icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                  </button>
+                  Фото
+                  <button class="custom-table__edit" type="button">
+                    <svg class="custom-table__edit-icon" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-edit"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-input custom-input--alt">
+                    <input class="custom-input__field" type="text" name="sort-photo" id="sort-photo" value="530">
+                  </div>
+                </td>
+                <td class="custom-table__data">1004</td>
+                <td class="custom-table__data">Файл</td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="photo-tabulate"
+                      name="photo-tabulate" checked>
+                    <label class="custom-checkbox__label" for="photo-tabulate">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="photo-required"
+                      name="photo-required" checked>
+                    <label class="custom-checkbox__label" for="photo-required">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="photo-delete"
+                      name="photo-delete">
+                    <label class="custom-checkbox__label" for="photo-delete">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr class="custom-table__row">
+                <td class="custom-table__data">
+                  <button class="custom-table__dots" type="button">
+                    <svg class="custom-table__dots-icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                  </button>
+                  Цвет
+                  <button class="custom-table__edit" type="button">
+                    <svg class="custom-table__edit-icon" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-edit"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-input custom-input--alt">
+                    <input class="custom-input__field" type="text" name="sort-color" id="sort-color" value="540">
+                  </div>
+                </td>
+                <td class="custom-table__data">1005</td>
+                <td class="custom-table__data">Строка</td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="color-tabulate"
+                      name="color-tabulate" checked>
+                    <label class="custom-checkbox__label" for="color-tabulate">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="color-required"
+                      name="color-required" checked>
+                    <label class="custom-checkbox__label" for="color-required">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="color-delete"
+                      name="color-delete">
+                    <label class="custom-checkbox__label" for="color-delete">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr class="custom-table__row">
+                <td class="custom-table__data">
+                  <button class="custom-table__dots" type="button">
+                    <svg class="custom-table__dots-icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                  </button>
+                  Локация
+                  <button class="custom-table__edit" type="button">
+                    <svg class="custom-table__edit-icon" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-edit"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-input custom-input--alt">
+                    <input class="custom-input__field" type="text" name="sort-location" id="sort-location" value="550">
+                  </div>
+                </td>
+                <td class="custom-table__data">1006</td>
+                <td class="custom-table__data">Справочник
+                  <button class="custom-table__guide" type="button">
+                    <svg class="custom-table__guide-icon" width="20" height="22" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-guide"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="location-tabulate"
+                      name="location-tabulate" checked>
+                    <label class="custom-checkbox__label" for="location-tabulate">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="location-required"
+                      name="location-required" checked>
+                    <label class="custom-checkbox__label" for="location-required">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="location-delete"
+                      name="location-delete">
+                    <label class="custom-checkbox__label" for="location-delete">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr class="custom-table__row">
+                <td class="custom-table__data">
+                  <button class="custom-table__dots" type="button">
+                    <svg class="custom-table__dots-icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                  </button>
+                  Количество
+                  <button class="custom-table__edit" type="button">
+                    <svg class="custom-table__edit-icon" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-edit"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-input custom-input--alt">
+                    <input class="custom-input__field" type="text" name="sort-amount" id="sort-amount" value="560">
+                  </div>
+                </td>
+                <td class="custom-table__data">1007</td>
+                <td class="custom-table__data">Число</td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="amount-tabulate"
+                      name="amount-tabulate" checked>
+                    <label class="custom-checkbox__label" for="amount-tabulate">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="amount-required"
+                      name="amount-required" checked>
+                    <label class="custom-checkbox__label" for="amount-required">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="amount-delete"
+                      name="amount-delete">
+                    <label class="custom-checkbox__label" for="amount-delete">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr class="custom-table__row">
+                <td class="custom-table__data">
+                  <button class="custom-table__dots" type="button">
+                    <svg class="custom-table__dots-icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                  </button>
+                  Описание
+                  <button class="custom-table__edit" type="button">
+                    <svg class="custom-table__edit-icon" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-edit"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-input custom-input--alt">
+                    <input class="custom-input__field" type="text" name="sort-desc" id="sort-desc" value="570">
+                  </div>
+                </td>
+                <td class="custom-table__data">1008</td>
+                <td class="custom-table__data">Текст</td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="desc-tabulate"
+                      name="desc-tabulate" checked>
+                    <label class="custom-checkbox__label" for="desc-tabulate">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="desc-required"
+                      name="desc-required" checked>
+                    <label class="custom-checkbox__label" for="desc-required">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="desc-delete"
+                      name="desc-delete">
+                    <label class="custom-checkbox__label" for="desc-delete">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr class="custom-table__row">
+                <td class="custom-table__data">
+                  <button class="custom-table__dots" type="button">
+                    <svg class="custom-table__dots-icon" width="4" height="16" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-dots"></use>
+                    </svg>
+                  </button>
+                  Количество
+                  <button class="custom-table__edit" type="button">
+                    <svg class="custom-table__edit-icon" width="12" height="12" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-edit"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="custom-table__data">
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-input custom-input--alt">
+                    <input class="custom-input__field" type="text" name="sort-count" id="sort-count" value="580">
+                  </div>
+                </td>
+                <td class="custom-table__data">1009</td>
+                <td class="custom-table__data">Число</td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="count-tabulate"
+                      name="count-tabulate" checked>
+                    <label class="custom-checkbox__label" for="count-tabulate">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="count-required"
+                      name="count-required" checked>
+                    <label class="custom-checkbox__label" for="count-required">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td class="custom-table__data">
+                  <div class="custom-checkbox">
+                    <input class="custom-checkbox__field visually-hidden" type="checkbox" id="count-delete"
+                      name="count-delete">
+                    <label class="custom-checkbox__label" for="count-delete">
+                      <span class="custom-checkbox__inner">
+                        <svg class="custom-checkbox__icon" width="10" height="8" aria-hidden="true">
+                          <use xlink:href="images/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <button class="settings__content-btn btn" type="button">
+              <svg class="btn__icon" width="13" height="14" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-plus"></use>
+              </svg>
+              <span class="btn__text">Добавить поле</span>
+            </button>
+          </div>
+        </section>
+      </li>
+    </ul>
+  </main>
+  <footer class="footer">
+    <div class="footer__btns">
+      <button class="footer__btn btn">
+        <svg class="btn__icon" width="15" height="14" aria-hidden="true">
+          <use xlink:href="images/sprite.svg#icon-save"></use>
+        </svg>
+        Сохранить
+      </button>
+      <button class="footer__btn btn btn--bg-white" type="button">Отменить</button>
+    </div>
+    <div class="footer__info">
+      <span class="footer__last-receiving">Последний приём <span class="footer__last-receiving-counter">20.09.2021
+          18:36:21</span></span>
+      <span class="footer__last-transfer">Последняя передача <span class="footer__last-transfer-counter">20.09.2021
+          18:38:21</span></span>
+    </div>
+    <a class="footer__docs" href="#">
+      <svg class="footer__docs-icon" width="17" height="19" aria-hidden="true">
+        <use xlink:href="images/sprite.svg#icon-file"></use>
+      </svg>
+      Документация</a>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+.custom-checkbox {
+	&__field:focus-visible {
+		~ .custom-checkbox__label .custom-checkbox__inner {
+			box-shadow: 0 0 10px 0 $color-orange;
+		}
+	}
+
+	&__field:checked {
+		+ .custom-checkbox__label .custom-checkbox__icon {
+			opacity: 1;
+		}
+
+		+ .custom-checkbox__label .custom-checkbox__inner {
+			background-color: $color-orange;
+		}
+	}
+
+	&__label {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		user-select: none;
+		cursor: pointer;
+
+		&:hover {
+			.custom-checkbox__inner {
+				box-shadow: 0 0 10px 0 $color-orange;
+			}
+		}
+	}
+
+	&__inner {
+		height: 20px;
+		width: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $color-orange;
+		background-color: transparent;
+		border-radius: 2px;
+		transition: box-shadow $transition-100;
+	}
+
+	&__text {
+		font-family: $ff-montserrat;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 17px;
+		color: $color-black;
+	}
+
+	&__icon {
+		color: $color-white;
+		opacity: 0;
+	}
+
+	&--alt {
+		.custom-checkbox__field:checked {
+			+ .custom-checkbox__label::after {
+				transform: translate(0, -50%);
+				background-color: $color-orange;
+			}
+		}
+
+		.custom-checkbox__label {
+			position: relative;
+			padding: 0 60px 0 0;
+
+			&::before {
+				content: '';
+				width: 52px;
+				height: 28px;
+				border-radius: 23px;
+				background-color: $color-white-smoke;
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				transition: box-shadow $transition-100;
+			}
+
+			&::after {
+				content: '';
+				width: 24px;
+				height: 24px;
+				border-radius: 50%;
+				background-color: $color-dark-gray;
+				position: absolute;
+				top: 50%;
+				right: 2px;
+				transform: translate(-100%, -50%);
+				transition: transform $transition-300, background-color $transition-300;
+			}
+		}
+
+		.custom-checkbox__label:hover::before,
+		.custom-checkbox__field:focus-visible ~ .custom-checkbox__label::before {
+			box-shadow: 1px 1px 5px $color-dark-gray;
+		}
+
+		.custom-checkbox__text {
+			font-family: $ff-main;
+			font-weight: 400;
+			font-size: 19px;
+			line-height: 28px;
+		}
+	}
+}

@@ -1,0 +1,41 @@
+.custom-search {
+	width: 300px;
+	position: relative;
+	border-radius: 5px;
+
+	&__field {
+		width: 100%;
+		font-family: $ff-main;
+		padding: 16px 15px 14px 39px;
+		border: none;
+		border-radius: 5px;
+		background-color: $color-white;
+		font-size: 16px;
+		line-height: 20px;
+		color: $color-midnight-express;
+		outline: none;
+		transition: box-shadow $transition-100;
+
+		&::placeholder {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 18px;
+			color: #aeaeae;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			opacity: 1;
+		}
+
+		&:hover,
+		&:focus-visible {
+			box-shadow: 1px 3px 5px $color-dark-gray;
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 20px;
+	}
+}

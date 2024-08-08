@@ -1,0 +1,21 @@
+// Colors
+$color-white: #ffffff;
+$color-black: #000000;
+$color-orange: #ff6600;
+$color-midnight-express: #172139;
+$color-white-smoke: #efefef;
+$color-dark-gray: #adadad;
+$color-gainsboro: #e1e1e1;
+$color-tomato: #FF5959;
+$color-black-01: rgb($color-black, 0.1);
+$color-black-08: rgb($color-black, 0.8);
+$color-midnight-express-01: rgb($color-midnight-express, 0.1);
+$color-midnight-express-08: rgb($color-midnight-express, 0.8);
+
+// Typography
+$ff-main: 'Futura PT', 'Arial', sans-serif;
+$ff-montserrat: 'Montserrat', 'Arial', sans-serif;
+
+// Animation
+$transition-300: ease-in 0.3s;
+$transition-100: ease-in 0.1s;

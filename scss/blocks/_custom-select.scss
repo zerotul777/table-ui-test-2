@@ -1,0 +1,87 @@
+.custom-select {
+	width: 360px;
+	position: relative;
+
+	&__new-select {
+		position: relative;
+		font-family: $ff-main;
+		padding: 15px 15px 15px 25px;
+		border: 1px solid $color-gainsboro;
+		border-radius: 5px;
+		background-color: $color-white-smoke;
+		font-size: 16px;
+		line-height: 18px;
+		color: $color-dark-gray;
+		outline: none;
+		cursor: pointer;
+		user-select: none;
+		transition: box-shadow $transition-100;
+		
+		&:hover {
+			box-shadow: 1px 3px 5px $color-dark-gray;
+		}
+
+		&-item span {
+			display: block;
+			font-size: 16px;
+			line-height: 18px;
+			color: $color-dark-gray;
+			transition: color $transition-300;
+
+			&:hover {
+				color: $color-midnight-express;
+			}
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			width: 10px;
+			height: 7px;
+			position: absolute;
+			right: 25px;
+			top: 50%;
+			transform: translateY(-50%);
+			background: url('../images/sprite/icon-arrow-bottom.svg') no-repeat right
+				center / contain;
+
+			-webkit-transition: transform 0.3s ease-in-out;
+			-o-transition: transform 0.3s ease-in-out;
+			transition: transform 0.3s ease-in-out;
+
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			-o-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+	}
+
+	&__new-select-list {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		cursor: pointer;
+		width: 100%;
+		display: grid;
+		gap: 10px;
+		padding: 16px 15px 15px 35px;
+		border-radius: 0 0 10px 10px;
+		border: 1px solid $color-gainsboro;
+		border-top: none;
+		z-index: 2;
+		background-color: $color-white-smoke;
+		user-select: none;
+		transform: translateY(-4px);
+
+		&--open {
+			display: block;
+		}
+	}
+
+	&__new-select.custom-select__new-select--open::after {
+		-webkit-transform: translateY(-50%) rotate(180deg);
+		-ms-transform: translateY(-50%) rotate(180deg);
+		-o-transform: translateY(-50%) rotate(180deg);
+		transform: translateY(-50%) rotate(180deg);
+	}
+}

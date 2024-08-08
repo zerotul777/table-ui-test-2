@@ -1,0 +1,94 @@
+.location-cell {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+  &:hover,
+  &:focus-within {
+      .location-cell__modify {
+        opacity: 1;
+      }
+    }
+
+	&__icon {
+		width: 4px;
+		height: 16px;
+		flex-shrink: 0;
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
+
+	&__name {
+		font-weight: 600;
+		font-size: 15px;
+		line-height: 18px;
+		color: $color-midnight-express;
+
+		.locations__list--third & {
+			font-weight: 450;
+		}
+	}
+
+	&__info {
+		font-family: $ff-montserrat;
+		font-size: 14px;
+		line-height: 17px;
+		color: $color-black;
+	}
+
+  &__count {
+    color: $color-orange;
+  }
+
+  &__barcode {
+    font-weight: 700;
+  }
+
+	&__modify {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity $transition-300;
+
+    &-edit,
+    &-delete {
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: $ff-montserrat;
+      font-size: 14px;
+      line-height: 17px;
+			outline: none;
+      cursor: pointer;
+
+			&:hover,
+			&:focus-visible {
+					text-decoration: underline;
+				}
+    }
+
+		&-edit {
+      color: $color-orange;
+
+			&-edit-icon {
+        width: 12px;
+			}
+		}
+
+		&-delete {
+      color: $color-tomato;
+
+			&-delete-icon {
+        width: 10px;
+			}
+		}
+	}
+}
